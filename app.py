@@ -7,9 +7,11 @@ import os
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def home():
     return "Flask server is running."
+
+
     
 model = tf.lite.Interpreter(model_path="model.tflite")
 model.allocate_tensors()
