@@ -6,6 +6,11 @@ from werkzeug.utils import secure_filename
 import os
 
 app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Flask server is running."
+    
 model = tf.lite.Interpreter(model_path="model.tflite")
 model.allocate_tensors()
 
