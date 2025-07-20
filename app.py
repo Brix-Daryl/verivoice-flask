@@ -39,4 +39,4 @@ def predict():
     return jsonify({'confidence': float(result), 'label': 'fake' if result > 0.5 else 'real'})
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
