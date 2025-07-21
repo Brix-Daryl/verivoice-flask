@@ -40,5 +40,5 @@ def run_tflite_model(input_array):
     interpreter.invoke()
 
     output = interpreter.get_tensor(output_details[0]['index'])[0][0]
-    label = "Real Audio" if output >= 0.5 else "Fake Audio"
+    label = "Genuine" if output >= 0.5 else "AI-Generated"
     return label, float(output)
